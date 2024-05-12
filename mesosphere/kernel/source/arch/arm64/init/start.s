@@ -13,6 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include <mesosphere/kern_select_assembly_macros.h>
 #include <mesosphere/kern_select_assembly_offsets.h>
 
 /* For some reason GAS doesn't know about it, even with .cpu cortex-a57 */
