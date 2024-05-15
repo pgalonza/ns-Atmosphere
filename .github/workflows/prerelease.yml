@@ -36,7 +36,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: atmosphere-artifacts
+          name: atmosphere-prerelease-artifacts
           path: ./out/nintendo_nx_arm64_armv8a/release/*
 
   create-prerelease:
@@ -46,11 +46,11 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: atmosphere-artifacts
+          name: atmosphere-prerelease-artifacts
           path: "./"
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "atmosphere-*.zip,fusee.bin"
           prerelease: true
-          name: "Atmosphère ${{ github.ref_name }}"
+          name: "Evaron-Atmosphère ${{ github.ref_name }}"
