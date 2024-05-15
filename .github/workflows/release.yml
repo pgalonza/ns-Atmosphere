@@ -54,3 +54,4 @@ jobs:
           artifacts: "atmosphere-*.zip,fusee.bin"
           prerelease: false
           name: "Evaron-Atmosphère ${{ github.ref_name }}"
+          bodyFile: "./FORK-CHANGELOG.md"
