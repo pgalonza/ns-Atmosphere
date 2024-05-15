@@ -7,6 +7,26 @@
 
 Atmosphère is a work-in-progress customized firmware for the Nintendo Switch.
 
+!In this fork
+=====
+
+Use changes from forks:
+
+* [BunniKaitlyn](https://github.com/BunniKaitlyn/Atmosphere)
+* [rashevskyv](https://github.com/rashevskyv/Kefirosphere)
+* [redraz](https://github.com/Ultra-NX/Ultra-Resources)
+* [zdm65477730](https://github.com/zdm65477730/Atmosphere)
+
+**Thank you very much**
+
+Features:
+
+* Used changes from others forks
+* Github-workflows for build project and create release
+* Container devkitPro image with everything atmosphere need to build
+* Automatizated the adding nx-hbmenu and nx-hdloader in build
+* Removed functionality has been returned
+
 Components
 =====
 
