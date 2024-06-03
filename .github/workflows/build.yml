@@ -3,7 +3,7 @@ name: Build Atmosphere
 on:
   push:
     branches:
-      - evaron-master
+      - master
     paths-ignore:
       - 'Dockerfile'
       - '.github/workflows/image.yml'
