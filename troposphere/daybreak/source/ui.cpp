@@ -892,6 +892,9 @@ namespace dbk {
                         g_use_exfat = false;
                     }
 
+                    /* Create the next menu. */
+                    // std::shared_ptr<Menu> next_menu = std::make_shared<ChooseResetMenu>(g_current_menu);
+
                     /* Set the reset to factory settings flag to false by default. */
                     g_reset_to_factory = false;
 
