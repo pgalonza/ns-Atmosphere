@@ -34,5 +34,5 @@ jobs:
         with:
           artifacts: "atmosphere-*.zip,fusee.bin"
           prerelease: true
-          name: "Evaron-Atmosphère ${{ github.ref_name }}"
+          name: "ns-Atmosphere ${{ github.ref_name }}"
           bodyFile: "CHANGELOG.md"
