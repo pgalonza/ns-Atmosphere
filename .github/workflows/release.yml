@@ -35,4 +35,4 @@ jobs:
           artifacts: "atmosphere-*.zip,fusee.bin"
           prerelease: false
           name: "ns-Atmosphere ${{ github.ref_name }}"
-          bodyFile: "CHANGELOG.md"
+          bodyFile: "git-cliff/CHANGELOG.md"
