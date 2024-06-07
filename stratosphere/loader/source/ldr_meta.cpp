@@ -118,11 +118,11 @@ namespace ams::ldr {
         //         meta->check_verification_data = false;
         //         R_SUCCEED();
         //     }
-        //
+
         //     /* Get the signature key generation. */
         //     const auto signature_key_generation = meta->npdm->signature_key_generation;
         //     R_UNLESS(fssystem::IsValidSignatureKeyGeneration(platform, signature_key_generation), ldr::ResultInvalidMeta());
-        //
+
         //     /* Verify the signature. */
         //     const u8 *sig         = meta->acid->signature;
         //     const size_t sig_size = sizeof(meta->acid->signature);
@@ -134,7 +134,7 @@ namespace ams::ldr {
         //     const size_t msg_size = meta->acid->size;
         //     const bool is_signature_valid = crypto::VerifyRsa2048PssSha256(sig, sig_size, mod, mod_size, exp, exp_size, msg, msg_size);
         //     R_UNLESS(is_signature_valid || !IsEnabledProgramVerification(), ldr::ResultInvalidAcidSignature());
-        //
+
         //     meta->check_verification_data = is_signature_valid;
         //     R_SUCCEED();
         // }
@@ -191,7 +191,7 @@ namespace ams::ldr {
     }
 
     /* API. */
-    Result LoadMeta(Meta *out_meta, const ncm::ProgramLocation &loc, const cfg::OverrideStatus &status, PlatformId  platform, bool unk_unused) {
+    Result LoadMeta(Meta *out_meta, const ncm::ProgramLocation &loc, const cfg::OverrideStatus &status, PlatformId platform, bool unk_unused) {
         /* Set the cached program id back to zero. */
         g_cached_program_id = {};
 
