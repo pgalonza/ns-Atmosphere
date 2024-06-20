@@ -200,9 +200,6 @@ namespace ams::ldr {
         {
             ON_SCOPE_EXIT { fs::CloseFile(file); };
             R_TRY(LoadMetaFromFile(file, std::addressof(g_meta_cache)));
-            R_TRY(ValidateAcidSignature(std::addressof(g_original_meta_cache.meta)));
-            meta->modulus                 = g_original_meta_cache.meta.modulus;
-            meta->check_verification_data = g_original_meta_cache.meta.check_verification_data;
         }
 
         /* Patch meta. Start by setting all program ids to the current program id. */
