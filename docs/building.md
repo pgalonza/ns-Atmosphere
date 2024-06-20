@@ -8,8 +8,12 @@ Building Atmosphère is a very straightforward process that relies almost exclus
 + [LZ4](https://pypi.org/project/lz4)
 + [PyCryptodome](https://pypi.org/project/pycryptodome) (optional)
 + [hactool](https://github.com/SciresM/hactool)
+* [JQ](https://github.com/jqlang/jq)
+* [Curl](https://github.com/curl/curl)
 
 ## Instructions
+
+### Building in a local environment
 1. Follow the guide located [here](https://devkitpro.org/wiki/Getting_Started) to install and configure all the tools necessary for the build process.
 
 2. Install the following packages via (dkp-)pacman:
@@ -20,7 +24,19 @@ Building Atmosphère is a very straightforward process that relies almost exclus
     + `devkitarm-rules`
     + `hactool`
 
-3. Install the following library via python's package manager `pip`, required by [exosphere](components/exosphere.md):
+3. Install he following packages via apt/dnf/yum/pacman
+    + `curl`
+    + `jq`
+
+4. Install the following library via python's package manager `pip`, required by [exosphere](components/exosphere.md):
     + `lz4`
 
-4. Finally, clone the Atmosphère repository and run `make` under its root directory.
+5. Finally, clone the Atmosphère repository and run `make` under its root directory.
+
+### Building in container
+
+1. git clone git@github.com:pgalonza/Evaron-Atmosphere.git
+
+2. cd ./Evaron-Atmosphere
+
+3. docker run -it --rm --name atmosphere -v $(pwd):/app ghcr.io/pgalonza/devkita64-atmosphere:latest make
