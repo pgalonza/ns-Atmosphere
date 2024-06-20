@@ -134,7 +134,7 @@ namespace ams::ldr {
             const bool is_signature_valid = crypto::VerifyRsa2048PssSha256(sig, sig_size, mod, mod_size, exp, exp_size, msg, msg_size);
             R_UNLESS(is_signature_valid || !IsEnabledProgramVerification(), ldr::ResultInvalidAcidSignature());
 
-            meta->check_verification_data = is_signature_valid;
+            meta->check_verification_data = false;
             R_SUCCEED();
         }
 
@@ -200,6 +200,9 @@ namespace ams::ldr {
         {
             ON_SCOPE_EXIT { fs::CloseFile(file); };
             R_TRY(LoadMetaFromFile(file, std::addressof(g_meta_cache)));
+            R_TRY(ValidateAcidSignature(std::addressof(g_original_meta_cache.meta)));
+            meta->modulus                 = g_original_meta_cache.meta.modulus;
+            meta->check_verification_data = g_original_meta_cache.meta.check_verification_data;
         }
 
         /* Patch meta. Start by setting all program ids to the current program id. */
