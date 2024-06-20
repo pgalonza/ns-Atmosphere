@@ -181,7 +181,7 @@ namespace ams::ldr {
                 meta->aci_sac = reinterpret_cast<u8 *>(aci) + aci->sac_offset;
                 meta->aci_kac = reinterpret_cast<u8 *>(aci) + aci->kac_offset;
 
-                // meta->modulus   = acid->modulus;
+                meta->modulus   = acid->modulus;
             }
 
             R_SUCCEED();
@@ -200,9 +200,9 @@ namespace ams::ldr {
         {
             ON_SCOPE_EXIT { fs::CloseFile(file); };
             R_TRY(LoadMetaFromFile(file, std::addressof(g_meta_cache)));
-            // R_TRY(ValidateAcidSignature(std::addressof(g_original_meta_cache.meta)));
-            // meta->modulus                 = g_original_meta_cache.meta.modulus;
-            // meta->check_verification_data = g_original_meta_cache.meta.check_verification_data;
+            R_TRY(ValidateAcidSignature(std::addressof(g_original_meta_cache.meta)));
+            meta->modulus                 = g_original_meta_cache.meta.modulus;
+            meta->check_verification_data = g_original_meta_cache.meta.check_verification_data;
         }
 
         /* Patch meta. Start by setting all program ids to the current program id. */
