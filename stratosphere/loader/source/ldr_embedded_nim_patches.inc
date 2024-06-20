@@ -19,6 +19,7 @@ constexpr inline const EmbeddedPatchEntry AmsProdinfoBlankerFix_17_0_0[] = {
     { 0x1334A8, "\xE2\x03\x1F\xAA", 4 },
 };
 
+/* Patch fallback case to mov w0, #1 rather than retrieving settings flag. */
 constexpr inline const EmbeddedPatchEntry AmsProdinfoBlankerFix_18_0_0[] = {
     { 0x139F48, "\xE2\x03\x1F\xAA", 4 },
 };
