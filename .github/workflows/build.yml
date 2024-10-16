@@ -1,0 +1,13 @@
+name: Build Atmosphere
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - 'Dockerfile'
+      - '.github/workflows/image.yml'
+
+jobs:
+  build-workflow:
+    uses: ./.github/workflows/build-jobs.yaml
