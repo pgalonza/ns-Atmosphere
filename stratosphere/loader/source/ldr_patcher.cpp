@@ -106,7 +106,6 @@ namespace ams::ldr {
             size_t num_entries;
             const EmbeddedPatchEntry *entries;
         };
-
         #include "ldr_embedded_es_patches.inc"
         #include "ldr_embedded_nifm_patches.inc"
         #include "ldr_embedded_nim_patches.inc"

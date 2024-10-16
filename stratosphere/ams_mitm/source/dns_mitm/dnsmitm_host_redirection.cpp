@@ -65,8 +65,6 @@ namespace ams::mitm::socket::resolver {
         }
 
         constexpr const char DefaultHostsFile[] =
-            //"Nintendo telemetry servers\n"
-            //"127.0.0.1 receive-%.dg.srv.nintendo.net receive-%.er.srv.nintendo.net\n";
             "# All Nintendo servers\n"
             "127.0.0.1 *nintendo*\n";
 
