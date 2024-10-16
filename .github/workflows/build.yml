@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - feature-integration
     paths-ignore:
       - 'Dockerfile'
       - '.github/workflows/image.yml'
