@@ -1,4 +1,4 @@
-FROM devkitpro/devkita64:20240602
+FROM devkitpro/devkita64:20240916
 
 WORKDIR /app/
 
