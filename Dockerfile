@@ -11,6 +11,6 @@ python3 -m venv /opt/venv && \
 . /opt//venv/bin/activate && \
 pip install --no-cache-dir -r /opt/requirements.txt
 
-RUN dkp-pacman -S --needed --noconfirm \
+RUN dkp-pacman -Syyu && dkp-pacman -S --needed --noconfirm \
 switch-glm switch-libjpeg-turbo \
-devkitarm-rules devkitA64 hactool
+devkitarm-rules hactool
